@@ -1,9 +1,9 @@
 import { InputText } from "primereact/inputtext";
 import { Controller, useFormContext } from "react-hook-form";
 import { inputValidator } from "../../../../library/utilities/helperFunction";
-import { FormFieldError } from "../FormFieldError/FormFieldError";
-import { IFormProps } from "../FormInterface/forms.model";
 import { IFormFieldType } from "../../../../library/utilities/constant";
+import { IFormProps } from "../formInterface/forms.model";
+import { FormFieldError } from "../formFieldError/FormFieldError";
 
 export const Input = (props: IFormProps) => {
   const { attribute, form, fieldType } = props;
