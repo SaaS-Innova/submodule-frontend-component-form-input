@@ -7,8 +7,8 @@ import { FormFieldError } from "../formFieldError/FormFieldError";
 
 export const Input = (props: IFormProps) => {
   const { attribute, form, fieldType } = props;
-  const { label } = form[attribute];
-  const { required, maxLength, type, disabled, placeholder } =
+  const { label,placeholder } = form[attribute];
+  const { required, maxLength, type, disabled } =
     form[attribute].rules;
   const {
     register,
