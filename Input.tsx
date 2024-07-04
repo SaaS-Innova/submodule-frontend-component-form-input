@@ -7,9 +7,9 @@ import { FormFieldError } from "../formFieldError/FormFieldError";
 
 export const Input = (props: IFormProps) => {
   const { attribute, form, fieldType } = props;
-  const { label,placeholder } = form[attribute];
-  const { required, maxLength, type, disabled } =
-    form[attribute].rules;
+  const { label, placeholder } = form[attribute];
+  const { required, maxLength, type, disabled } = form[attribute].rules;
+  const { icon, handleClick } = props.suffixIcon || {};
   const {
     register,
     control,
@@ -61,7 +61,7 @@ export const Input = (props: IFormProps) => {
               return (
                 <InputText
                   {...field}
-                  value={field.value}
+                  value={field.value ?? ""}
                   type={type ?? "text"}
                   id={attribute}
                   {...register(attribute, {
@@ -76,6 +76,11 @@ export const Input = (props: IFormProps) => {
               );
             }}
           />
+          {props.suffixIcon && icon && handleClick && (
+            <span className="p-inputgroup-addon bg-white cursor-pointer">
+              <i className={icon} onClick={handleClick}></i>
+            </span>
+          )}
         </div>
         <FormFieldError data={{ errors, name: attribute }} />
       </div>
