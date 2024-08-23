@@ -60,14 +60,9 @@ export const Input = (props: IFormProps) => {
             render={({ field }) => {
               return (
                 <InputText
-                  {...field}
+                  id={attribute}
                   value={field.value ?? ""}
                   type={type ?? "text"}
-                  id={attribute}
-                  {...register(attribute, {
-                    ...inputValidator(form[attribute].rules, label),
-                  })}
-                  autoFocus
                   className={errors[attribute] ? "p-invalid" : ""}
                   maxLength={maxLength}
                   placeholder={placeholder}
