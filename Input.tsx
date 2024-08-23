@@ -60,7 +60,7 @@ export const Input = (props: IFormProps) => {
             render={({ field }) => {
               return (
                 <InputText
-                  id={attribute}
+                  id={field.name}
                   value={field.value ?? ""}
                   type={type ?? "text"}
                   className={errors[attribute] ? "p-invalid" : ""}
