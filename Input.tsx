@@ -67,6 +67,7 @@ export const Input = (props: IFormProps) => {
                   maxLength={maxLength}
                   placeholder={placeholder}
                   disabled={disabled}
+                  onChange={(e) => field.onChange(e)}
                 />
               );
             }}
