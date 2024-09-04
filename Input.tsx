@@ -6,7 +6,7 @@ import { IFormProps } from "../formInterface/forms.model";
 import { FormFieldError } from "../formFieldError/FormFieldError";
 
 export const Input = (props: IFormProps) => {
-  const { attribute, form, fieldType } = props;
+  const { attribute, form, fieldType, handleBlurEvent } = props;
   const { label, placeholder } = form[attribute];
   const { required, maxLength, type, disabled } = form[attribute].rules;
   const { icon, handleClick } = props.suffixIcon || {};
@@ -68,6 +68,11 @@ export const Input = (props: IFormProps) => {
                   placeholder={placeholder}
                   disabled={disabled}
                   onChange={(e) => field.onChange(e)}
+                  onBlur={(e) => {
+                    if (handleBlurEvent) {
+                      handleBlurEvent(e);
+                    }
+                  }}
                 />
               );
             }}
