@@ -11,7 +11,6 @@ export const Input = (props: IFormProps) => {
   const { required, maxLength, type, disabled } = form[attribute].rules;
   const { icon, handleClick } = props.suffixIcon || {};
   const {
-    register,
     control,
     formState: { errors },
   } = useFormContext();
